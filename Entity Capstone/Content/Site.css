@@ -1,0 +1,149 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.logo {
+	background: url('../Images/GrandCircus Logo.png')no-repeat top left;
+	display: block;
+	width: 100px;
+	height: 20px;
+	text-indent: -9999px;
+	position: relative;
+	top: 14px;
+	
+}
+.navbar-inverse {
+	background-color: aliceblue !important;
+}
+
+.contact {
+	position:relative;
+	color:blue;
+	
+}
+
+
+#GCfront {
+	position:relative;
+	text-align:center;
+	padding-top: -200px;
+	padding-bottom: -200px;
+
+}
+
+#WhoHires {
+	background-color:beige;
+	padding: 40px;
+	border: solid black;
+
+}
+
+#OurHires {
+	background-color:aliceblue;
+	padding: 40px;
+	border: solid black;
+}
+
+#Started {
+	border-bottom:solid black;
+}
+
+
+h2 {
+	text-align:center;
+	
+}
+
+#FrontEnd {
+	text-align: center;
+	border:solid black 2px;
+	width:600px;
+	position:relative;
+	left:250px;
+	padding-top:40px;
+	padding-bottom:40px;
+}
+#Java {
+	text-align: center;
+	border: solid black 2px;
+	width: 600px;
+	position: relative;
+	left: 250px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+#CSharp {
+	text-align: center;
+	border: solid black 2px;
+	width: 600px;
+	position: relative;
+	left: 250px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+#spacing {
+	padding-top:30px;
+	padding-bottom:30px;
+}
+#contactHead {
+	text-align:center;
+}
+#FullContact {
+
+	text-align:center;
+	width: 300px;
+	position:relative;
+	left:400px;
+}
+
+#MoreInfo {
+	text-align:center;
+}
+
+#MoreInfoBox {
+	border: 2px solid grey;
+	width: 400px;
+	position:relative;
+	left: 375px;
+	font-size: 17px;
+	background-color:beige;
+	
+}
+
+
+#ClassTimes {
+	background-color:gainsboro;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+ul {
+	text-align: center;
+	list-style-position: inside;
+}
+
+#Learn {
+	background-color:lightslategrey;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
