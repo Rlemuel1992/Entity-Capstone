@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Entity_Capstone.Models.Bootcamps>
+﻿@model IEnumerable<Entity_Capstone.Models.Bootcamp>
 
 @{
     ViewBag.Title = "Index";
@@ -27,6 +27,7 @@
     </tr>
 
 @foreach (var item in Model) {
+
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Class_Name)

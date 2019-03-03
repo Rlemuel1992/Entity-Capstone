@@ -12,7 +12,7 @@ namespace Entity_Capstone.Controllers
 {
     public class BootcampsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private BootcampsDB db = new BootcampsDB();
 
         // GET: Bootcamps
         public ActionResult Index()
@@ -27,12 +27,12 @@ namespace Entity_Capstone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bootcamps bootcamps = db.Bootcamps.Find(id);
-            if (bootcamps == null)
+            Bootcamp bootcamp = db.Bootcamps.Find(id);
+            if (bootcamp == null)
             {
                 return HttpNotFound();
             }
-            return View(bootcamps);
+            return View(bootcamp);
         }
 
         // GET: Bootcamps/Create
@@ -46,16 +46,17 @@ namespace Entity_Capstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Class_Name,Category,Start_Date,End_Date")] Bootcamps bootcamps)
+        public ActionResult Create([Bind(Include = "ID,Class_Name,Category,Start_Date,End_Date")] Bootcamp bootcamp)
         {
+			
             if (ModelState.IsValid)
             {
-                db.Bootcamps.Add(bootcamps);
+                db.Bootcamps.Add(bootcamp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(bootcamps);
+            return View(bootcamp);
         }
 
         // GET: Bootcamps/Edit/5
@@ -65,12 +66,12 @@ namespace Entity_Capstone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bootcamps bootcamps = db.Bootcamps.Find(id);
-            if (bootcamps == null)
+            Bootcamp bootcamp = db.Bootcamps.Find(id);
+            if (bootcamp == null)
             {
                 return HttpNotFound();
             }
-            return View(bootcamps);
+            return View(bootcamp);
         }
 
         // POST: Bootcamps/Edit/5
@@ -78,15 +79,15 @@ namespace Entity_Capstone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Class_Name,Category,Start_Date,End_Date")] Bootcamps bootcamps)
+        public ActionResult Edit([Bind(Include = "ID,Class_Name,Category,Start_Date,End_Date")] Bootcamp bootcamp)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(bootcamps).State = EntityState.Modified;
+                db.Entry(bootcamp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(bootcamps);
+            return View(bootcamp);
         }
 
         // GET: Bootcamps/Delete/5
@@ -96,12 +97,12 @@ namespace Entity_Capstone.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bootcamps bootcamps = db.Bootcamps.Find(id);
-            if (bootcamps == null)
+            Bootcamp bootcamp = db.Bootcamps.Find(id);
+            if (bootcamp == null)
             {
                 return HttpNotFound();
             }
-            return View(bootcamps);
+            return View(bootcamp);
         }
 
         // POST: Bootcamps/Delete/5
@@ -109,8 +110,8 @@ namespace Entity_Capstone.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Bootcamps bootcamps = db.Bootcamps.Find(id);
-            db.Bootcamps.Remove(bootcamps);
+            Bootcamp bootcamp = db.Bootcamps.Find(id);
+            db.Bootcamps.Remove(bootcamp);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
