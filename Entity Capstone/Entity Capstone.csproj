@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -173,13 +175,33 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Bootcamps.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BootcampsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AllBootcamps.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllBootcamps.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllBootcamps.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllBootcamps.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllBootcamps.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AllBootcamps.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bootcamps.cs">
+      <DependentUpon>AllBootcamps.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -199,8 +221,25 @@
     <Content Include="Images\Meridian.png" />
     <Content Include="Images\Quicken Loans.png" />
     <Content Include="Images\UnitedShore.png" />
+    <Content Include="Models\AllBootcamps.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AllBootcamps.edmx</DependentUpon>
+      <LastGenOutput>AllBootcamps.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AllBootcamps.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AllBootcamps.edmx</DependentUpon>
+      <LastGenOutput>AllBootcamps.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\AllBootcamps.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AllBootcamps.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AllBootcamps.edmx.diagram">
+      <DependentUpon>AllBootcamps.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -250,6 +289,11 @@
     <Content Include="Views\Home\CSharp.cshtml" />
     <Content Include="Views\Home\FrontEnd.cshtml" />
     <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\Bootcamps\Create.cshtml" />
+    <Content Include="Views\Bootcamps\Delete.cshtml" />
+    <Content Include="Views\Bootcamps\Details.cshtml" />
+    <Content Include="Views\Bootcamps\Edit.cshtml" />
+    <Content Include="Views\Bootcamps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -266,6 +310,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

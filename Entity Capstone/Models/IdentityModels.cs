@@ -29,5 +29,7 @@ namespace Entity_Capstone.Models
         {
             return new ApplicationDbContext();
         }
-    }
+
+		public System.Data.Entity.DbSet<Entity_Capstone.Models.Bootcamps> Bootcamps { get; set; }
+	}
 }
